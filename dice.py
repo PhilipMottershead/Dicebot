@@ -1,2 +1,0 @@
-class dice:
-    sides:int
