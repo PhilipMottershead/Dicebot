@@ -1,8 +1,6 @@
-# Morning Bot
+# Dice Bot
 
-Here at Joel Adams & Co. engineering we pride ourselves in creating revolutionary new 
-inventions such as this discord bot. Why are you still reading this? Go add it 
-already!
+Creating a open source alternative to existing dicebots on discord.
 
 ## Testing install instructions
 
@@ -19,7 +17,7 @@ DISCORD_TOKEN=YOUR_TOKEN_HERE
 
 Replacing YOUR_TOKEN_HERE with the token for your bot, see <https://discordpy.readthedocs.io/en/latest/discord.html> for how to get that.
 
-Run in console via running `python morningbot.py`
+Run in console via running `python dicebot.py`
 
 If is correct it should output :
 
@@ -29,4 +27,4 @@ To test see <https://discordpy.readthedocs.io/en/latest/discord.html> on how to 
 
 ## Running Unit tests
 
-To run the unit test run `python testMorningbot.py` in Pipenv shell
+To run the unit test run `python testDiceBot.py` in Pipenv shell
