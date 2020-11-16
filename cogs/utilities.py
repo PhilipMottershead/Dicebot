@@ -1,6 +1,6 @@
 from discord.ext import commands
 from discord.ext.commands import Context
-
+from roller import rollDice
 
 class Utilities(commands.Cog):
     """
@@ -23,9 +23,8 @@ class Utilities(commands.Cog):
         """
         Print a link to the source code
         """
-        await ctx.send(content='Created by `Andreas` and `Joel`, brought to you by `Joel Adams & co`\n'
-                               'Thanks to the contributors, `Philip`, `Matt`, and `Michael`\n'
-                               'https://github.com/Andrastr/MorningBot')
+        await ctx.send(content='Created by Philip Mottershead'
+                               'https://github.com/PhilipMottershead/Dicebot')
 
     @commands.command()
     async def feedback(self, ctx: Context):
@@ -33,4 +32,12 @@ class Utilities(commands.Cog):
         Report feedback or issues with the bot
         """
         await ctx.send('If the bot is broken or you have any feedback you\'d like to submit please create a issue on '
-                       'GitHub: https://github.com/Andrastr/MorningBot')
+                       'GitHub: https://github.com/PhilipMottershead/Dicebot')
+
+    @commands.command()
+    async def r(self, ctx: Context):
+        """
+        Report feedback or issues with the bot
+        """
+       
+        await ctx.send(rollDice(ctx.message.content))

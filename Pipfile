@@ -4,6 +4,8 @@ url = "https://pypi.org/simple"
 verify_ssl = true
 
 [dev-packages]
+pylint = "*"
+rope = "*"
 
 [packages]
 discord = "*"
@@ -14,4 +16,4 @@ asyncio = "*"
 pytz = "*"
 
 [requires]
-python_version = "3.7"
+python_version = "3.8.6"

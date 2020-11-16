@@ -10,7 +10,6 @@ from discord.ext.commands import DefaultHelpCommand
 from dotenv import load_dotenv
 from datetime import datetime
 import random
-import utils
 
 # logs data to the discord.log file, if this file doesn't exist at runtime it is created automatically
 from cogs.utilities import Utilities
@@ -30,7 +29,7 @@ TOKEN = os.getenv('DISCORD_TOKEN')
 helpCommand = DefaultHelpCommand()
 
 bot = commands.Bot(
-    command_prefix=".",
+    command_prefix="!",
     help_command=helpCommand
 )
 
@@ -47,7 +46,7 @@ async def on_ready():
     Do something when the bot is ready to use.
     """
     print(f'{bot.user.name} has connected to Discord!')
-    await bot.change_presence(activity=discord.Activity(type=discord.ActivityType.watching, name="the sunrise"))
+    await bot.change_presence(activity=discord.Activity(type=discord.ActivityType.watching, name="Rolling Dice"))
 
 
 async def activity_loop():

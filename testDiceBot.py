@@ -1,51 +1,49 @@
 import unittest
 from datetime import datetime, timedelta,date
-import utils
+import roller
 
-class TestCalculateTimezone(unittest.TestCase):
-    def test_datetime_after_morning(self):
-        now = datetime.now()
-        now = now.replace(hour=15, minute=0, second=0, microsecond=0)
-        morning = now.replace(hour=8)
-
-        value = utils.calculate_timezone(now,morning)
-
-        self.assertEqual(value, -7, "Should be -7")
+class TestRollSingleDice(unittest.TestCase):
+    def test_RollSingleDice_isWithinRange(self):
+        diceSides = "3"
+        roll = roller.rollSingleDice(diceSides)
+        self.assertLessEqual(roll,int(diceSides))
     
-    def test_datetime_before_morning(self):
-        now = datetime.now()
-        now = now.replace(hour=7, minute=0, second=0, microsecond=0)
-        morning = now.replace(hour=8)
+    def test_inputNotNumber(self):
+        diceSides = "d"
+        roll = roller.rollSingleDice(diceSides)
+        self.assertEqual(roll,-1)
+       
+class TestParseSingleDiceString(unittest.TestCase):
+    def test_SingleDiceRoll(self):
+        rolls = roller.parseSingleDiceString("d6")
+        self.assertEqual(len(rolls),1)
+        
+    def test_RollSingleDice_MultipleDiceRolls(self):
+        rolls = roller.parseSingleDiceString("3d6")
+        self.assertEqual(len(rolls),3)
 
-        value = utils.calculate_timezone(now,morning)
-
-        self.assertEqual(value, 1, "Should be 1")
-
-    def test_datetime_equals_morning(self):
-        now = datetime.now()
-        now = now.replace(hour=8, minute=0, second=0, microsecond=0)
-        morning = now.replace(hour=8)
-
-        value = utils.calculate_timezone(now,morning)
-
-        self.assertEqual(value, 0, "Should be 0")
+class TestRollDices(unittest.TestCase):
+    def test_SingleDice(self):
+        rolls = roller.rollDices("!r d6")
+        self.assertEqual(len(rolls),1)
+        self.assertEqual(len(rolls[0]),1)
     
-class TestGetLocation(unittest.TestCase):
-    def test_get_location_00(self):
-        timezone = 0
-        random_number = 0
+    def test_MultipleDicesOfSameSides(self):
+        rolls = roller.rollDices("!r 5d6")
+        self.assertEqual(len(rolls),1)
+        self.assertEqual(len(rolls[0]),5)
 
-        location = utils.get_location(timezone,random_number)
+    def test_SingleDicesOfDifferentSides(self):
+        rolls = roller.rollDices("!r d6 d5")
+        self.assertEqual(len(rolls),2)
+        self.assertEqual(len(rolls[0]),1)
+        self.assertEqual(len(rolls[1]),1)
 
-        self.assertEqual(location, "Cockermouth", "Should be Cockermouth")
-
-    def test_get_location_02(self):
-        timezone = 0
-        random_number = 2
-
-        location = utils.get_location(timezone,random_number)
-
-        self.assertEqual(location, "(تجكجة (Tidjikja)", "Should be (تجكجة (Tidjikja)")
-
+    def test_MultipleDicesOfDifferentSides(self):
+        rolls = roller.rollDices("!r 3d6 5d5")
+        self.assertEqual(len(rolls),2)
+        self.assertEqual(len(rolls[0]),3)
+        self.assertEqual(len(rolls[1]),5)
+    
 if __name__ == '__main__':
     unittest.main()
