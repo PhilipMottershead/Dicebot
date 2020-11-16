@@ -20,7 +20,9 @@ def parseSingleDiceString(dice:str):
         max_rolls = 1
     
     while(max_rolls>roll_num):
-        rolls.append(rollSingleDice(diceSizes1[1]))
+        roll = rollSingleDice(diceSizes1[1])
+        if (roll!=-1):
+            rolls.append(roll)                
         roll_num = roll_num + 1
     return rolls
 
