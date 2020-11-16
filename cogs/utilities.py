@@ -1,6 +1,6 @@
 from discord.ext import commands
 from discord.ext.commands import Context
-from diceBot import Roller
+from diceBot import roller
 
 class Utilities(commands.Cog):
     """
@@ -40,4 +40,4 @@ class Utilities(commands.Cog):
         Report feedback or issues with the bot
         """
        
-        await ctx.send(Roller.rollDices(ctx.message.content))
+        await ctx.send(roller.rollDices(ctx.message.content))

@@ -1,4 +1,4 @@
-import asycio
+import asyncio
 import os
 
 import logging
@@ -8,6 +8,8 @@ from discord.ext import commands
 from discord.ext.commands import DefaultHelpCommand
 
 from dotenv import load_dotenv
+from datetime import datetime
+import random
 
 # logs data to the discord.log file, if this file doesn't exist at runtime it is created automatically
 from cogs.utilities import Utilities
@@ -35,6 +37,7 @@ bot = commands.Bot(
 generalCog = Utilities()
 bot.add_cog(generalCog)
 helpCommand.cog = generalCog
+
 
 
 @bot.event
