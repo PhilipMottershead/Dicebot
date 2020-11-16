@@ -11,7 +11,7 @@ class TestRollSingleDice(unittest.TestCase):
     def test_inputNotNumber(self):
         diceSides = "d"
         roll = roller.rollSingleDice(diceSides)
-        self.assertEqual(roll,-2)
+        self.assertEqual(roll,-1)
        
 class TestParseSingleDiceString(unittest.TestCase):
     def test_SingleDiceRoll(self):
