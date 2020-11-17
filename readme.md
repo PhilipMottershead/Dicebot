@@ -9,7 +9,7 @@ Creating a open source alternative to existing dicebots on discord.
 
 ## Testing install instructions
 
-Run `pipenv install` into the terminal
+Run `pipenv install -r requirements.txt` into the terminal
 
 Run `pipenv shell` to enter pip environment
 
