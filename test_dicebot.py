@@ -1,5 +1,6 @@
 import unittest
-import roller
+
+from diceBot import roller
 
 class TestRollSingleDice(unittest.TestCase):
     
