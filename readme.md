@@ -1,4 +1,8 @@
 ![Python application](https://github.com/PhilipMottershead/Dicebot/workflows/Python%20application/badge.svg)
+<a href="https://scan.coverity.com/projects/philipmottershead-dicebot">
+  <img alt="Coverity Scan Build Status"
+       src="https://scan.coverity.com/projects/22096/badge.svg"/>
+</a>
 # Dice Bot
 
 Creating a open source alternative to existing dicebots on discord.
