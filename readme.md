@@ -1,8 +1,5 @@
 [![Build Status](https://travis-ci.com/PhilipMottershead/Dicebot.svg?branch=main)](https://travis-ci.com/PhilipMottershead/Dicebot)
-<a href="https://scan.coverity.com/projects/philipmottershead-dicebot">
-  <img alt="Coverity Scan Build Status"
-       src="https://scan.coverity.com/projects/22096/badge.svg"/>
-</a>
+[![Coverage Status](https://coveralls.io/repos/github/PhilipMottershead/Dicebot/badge.svg?branch=main)](https://coveralls.io/github/PhilipMottershead/Dicebot?branch=main)
 # Dice Bot
 
 Creating a open source alternative to existing dicebots on discord.
